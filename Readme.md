@@ -14,11 +14,11 @@ Its built using and can be deployed as docker. It can be built using docker comp
 5. 	To build docker images and deploy docker container - run this command: docker-compose up --build
 
 6. To check if elasticsearch is running:
-	-	Open your favorite browser and type in the following URL and hit go: http://<host>:9200
+	-	Open your favorite browser and type in the following URL and hit go: http://<<host>>:9200
 7. To access spring based web application:
-	-	Open your favorite browser and type in the following URL and hit go: http://<host>:8080/elk-spring-mvc-web
+	-	Open your favorite browser and type in the following URL and hit go: http://<<host>>:8080/elk-spring-mvc-web
 8.	To start using and build dashboards in Kibana:
-	-	Open your favorite browser and type in the following URL and hit go:  http://<host>:5601
+	-	Open your favorite browser and type in the following URL and hit go:  http://<<host>>:5601
 
 Thats about it.
 

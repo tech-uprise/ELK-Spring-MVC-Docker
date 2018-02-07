@@ -1,6 +1,9 @@
 package com.wal.monkeys.controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -34,8 +37,8 @@ public class RegistrationController {
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("register");
-		mav.addObject("user", new User());
-	
+		mav.addObject("user", new User());		
+		
 		return mav;
 	}
 	
@@ -55,13 +58,13 @@ public class RegistrationController {
 	}
 	
 	private void updateElkProperties(Map<String, String> env) {
+				
+		//Path path = Paths.get("/exercise/sts-workspace/elk-spring-mvc-web/src/main/resources/elk.properties");
 		
-		
-		Path path = Paths.get("/exercise/sts-workspace/elk-spring-mvc-web/src/main/resources/elk.properties");
+		Path path = Paths.get(getAbsolutePath());
 			
 		Charset charset = StandardCharsets.UTF_8;
 		try {
-
 		
 			for (String envName : env.keySet()) {
 				System.out.println("Environment variables:");
@@ -86,6 +89,29 @@ public class RegistrationController {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	private String getAbsolutePath() {
+		
+		String reponsePath = "";
+		
+		try {
+			String path = this.getClass().getClassLoader().getResource("").getPath();
+			String fullPath = URLDecoder.decode(path, "UTF-8");
+			String pathArr[] = fullPath.split("/resource/");
+			System.out.println(fullPath);
+			System.out.println(pathArr[0]);
+			
+			// to read a file from webcontent
+			reponsePath = new File(fullPath).getPath() + File.separatorChar + "elk.properties";
+			
+			System.out.println("Path.... "+reponsePath);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return reponsePath;
 	}
 
 }

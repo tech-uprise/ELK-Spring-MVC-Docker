@@ -56,8 +56,6 @@ public class RegistrationController {
 	
 	private void updateElkProperties(Map<String, String> env) {
 		
-		System.out.println("inside updateElkProperties().....");
-		
 		Path path = Paths.get("/usr/local/tomcat/webapps/elk-spring-mvc-web/WEB-INF/classes/elk.properties");
 		Charset charset = StandardCharsets.UTF_8;
 		try {

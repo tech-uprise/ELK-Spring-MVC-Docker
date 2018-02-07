@@ -45,9 +45,7 @@ public class RegistrationController {
 		
 		KafkaaProducer producer = new KafkaaProducer();
 		producer.publishMessage(user);
-		
-		System.out.println("inside method 3");
-		
+			
 		// Commenting it out because there is a separate logstash container is run which takes care of pusing the data from kafka to elasticsearch.
 		//KafkaaConsumer consumer = new KafkaaConsumer();
 		//consumer.logstshToElastic();

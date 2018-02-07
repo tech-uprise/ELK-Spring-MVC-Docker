@@ -1,0 +1,6 @@
+Spring Web App: http://<host>:8080/elk-spring-mvc-web
+Elasticseach: http://<host>:9200
+Kibana: http://<host>:5601
+
+
+

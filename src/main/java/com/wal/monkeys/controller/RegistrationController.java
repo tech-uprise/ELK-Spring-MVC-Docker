@@ -45,7 +45,7 @@ public class RegistrationController {
 		
 		KafkaaProducer producer = new KafkaaProducer();
 		producer.publishMessage(user);
-			
+		
 		// Commenting it out because there is a separate logstash container is run which takes care of pusing the data from kafka to elasticsearch.
 		//KafkaaConsumer consumer = new KafkaaConsumer();
 		//consumer.logstshToElastic();
@@ -56,14 +56,20 @@ public class RegistrationController {
 	
 	private void updateElkProperties(Map<String, String> env) {
 		
-		Path path = Paths.get("/usr/local/tomcat/webapps/elk-spring-mvc-web/WEB-INF/classes/elk.properties");
+		
+		Path path = Paths.get("/exercise/sts-workspace/elk-spring-mvc-web/src/main/resources/elk.properties");
+			
 		Charset charset = StandardCharsets.UTF_8;
 		try {
-			String content = new String(Files.readAllBytes(path), charset);
+
 		
 			for (String envName : env.keySet()) {
+				System.out.println("Environment variables:");
 	            System.out.format("%s=%s%n", envName, env.get(envName));
-	            if(envName.equals("KAFKA_HOST_NAME")) {
+	            if(envName.equals("PROP_HOME")) 
+	            		path = Paths.get(env.get(envName));
+	         	String content = new String(Files.readAllBytes(path), charset);
+				 if(envName.equals("KAFKA_HOST_NAME")) {
 	            		content = content.replaceAll("localhost", env.get(envName));
 	            		Files.write(path, content.getBytes(charset));
 	            } else if (envName.equals("KAFKA_PORT")) {
@@ -74,6 +80,7 @@ public class RegistrationController {
 	            		Files.write(path, content.getBytes(charset));
 	            }          	
 			}
+			System.out.println("Path to elk.properties: "+path);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

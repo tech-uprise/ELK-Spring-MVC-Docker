@@ -1,4 +1,4 @@
-This is a Spring MVC web application. 
+This is a Spring MVC web application built using the following components. 
 a.	Spring v4.3.9
 b.	Elasticsearch v5.4
 c.	Logstash v5.4

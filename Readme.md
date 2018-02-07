@@ -9,8 +9,8 @@ Its built using and can be deployed as docker. It can be built using docker comp
 Download and install docker & docker compose from docker.com and follow the below steps to build docker images and deploy on docker containers.
 
 1.	Clone the repo or download as zip file.
-2.	Extract and zip file and step into docker and further into docker.
-3. 	Open ".env" file under docker/compose using your favorite editor and and replace all the "localhost" to your machine IP or host.
+2.	Extract the zip file and step into docker and further into docker folder.
+3. 	Open ".env" file under docker/compose using your favorite editor and and replace all "localhost" to your machine IP or host.
 4.	Open command line editor/terminal and go into docker folder (where you saved or cloned the repo).
 5. 	To build docker images and deploy docker container - run this command: docker-compose up --build
 6. To check if elasticsearch is running:

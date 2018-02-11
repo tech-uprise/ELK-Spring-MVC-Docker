@@ -5,7 +5,7 @@ c.	Logstash v5.4
 d.	Kibana v5.4
 e.	Kafka v0.10.2.0
 
-Its built using and can be deployed as docker. It can be built using docker compose. 
+This project can be build as docker images and deployed in docker containers. Also, the docker images can be built using docker-compose. 
 Download and install docker & docker compose from docker.com and follow the below steps to build docker images and deploy on docker containers.
 
 1.	Clone the repo or download as zip file.

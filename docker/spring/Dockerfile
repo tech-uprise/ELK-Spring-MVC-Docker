@@ -1,5 +1,6 @@
 # Pull the base image for tomcat
-FROM tomcat:8-jre8
+#FROM tomcat:8-jre8
+FROM tomcat:8-jre9
 
 ENV TOMCAT_HOME /usr/local/tomcat
 ENV ELK_PROP_PATH $ELK_PROP_PATH

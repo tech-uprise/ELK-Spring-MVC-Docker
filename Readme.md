@@ -5,20 +5,20 @@ c.	Logstash v5.4
 d.	Kibana v5.4
 e.	Kafka v0.10.2.0
 
-This project can be build as docker images and deployed in docker containers. Also, the docker images can be built using docker-compose. 
+This is a docker project, the docker images are built using docker-compose. 
 Download and install docker & docker compose from docker.com and follow the below steps to build docker images and deploy on docker containers.
 
 1.	Clone the repo or download as zip file.
-2.	Extract the zip file and step into docker and further into docker folder.
-3. 	Open ".env" file under docker/compose using your favorite editor and and replace all "localhost" to your machine IP or host.
+2.	Extract the zip file(if downloded) and step into docker and further into compose folder.
+3. 	Open ".env" file under docker/compose using your favorite editor and replace all "localhost" to your machine IP or host.
 4.	Open command line editor/terminal and go into docker folder (where you saved or cloned the repo).
-5. 	To build docker images and deploy docker container - run this command: docker-compose up --build
+5. 	To build docker images and deploy - run this command: "docker-compose up --build"
 6. To check if elasticsearch is running:
-	-	Open your favorite browser and type in the following URL and hit go: http://your-host:9200
+	-	Open browser and type in the following URL and hit go: http://your-host:9200
 7. To access spring based web application:
-	-	Open your favorite browser and type in the following URL and hit go: http://your-host:8080/elk-spring-mvc-web
+	-	Open browser and type in the following URL and hit go: http://your-host:8080/elk-spring-mvc-web
 8.	To start using and build dashboards in Kibana:
-	-	Open your favorite browser and type in the following URL and hit go:  http://your-host:5601
+	-	Open browser and type in the following URL and hit go:  http://your-host:5601
 
 Thats about it.
 
